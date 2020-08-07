@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>The Gossip Project - Home</title>
+    </head>
+
+    
+  <body>
+  
+  <main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron" style="background-image: url(<%= 'https://news.ucr.edu/sites/g/files/rcwecm1816/files/styles/news_article_featured_l/public/2019-05/gossip%20pic.jpg' %>)"
+    <div class="container">
+      <h1 class="display-3">Welcome To The Best & Famous Gossip Project!</h1>
+      <p>Bienvenue sur votre DASHBOARD. A vous la gloire!</p>
+      <p><%= button_to "Crée un potin", new_gossip_path, class:"btn btn-primary btn-lg", :method => :get %></p>
+    </div>
+  </div>
+
+  <center>
+  <h1 style="font-size:40px;" >Tous les potins </h1>
+  </br>
+
+  
+
+  
+  <% @list_gossips.each do |gossip| %>
+    <div class="card mb-4 box-shadow" style="width: 18rem;">
+    <h5 class="card-title text-center">Potin n°<%= gossip.id %> </h5>
+    <p class="card-text text-center">
+        <%= link_to("/gossips/#{gossip.id}") do %>
+            <%= gossip.user.pseudo %> : </br> <%= gossip.content %> </p>
+        <% end %>	
+        </div></br>
+  <% end %>
+
+  </body>
+</center>  
+</html>
