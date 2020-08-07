@@ -10,15 +10,21 @@ class SessionsController < ApplicationController
     # on vérifie si l'utilisateur existe bien ET si on arrive à l'authentifier (méthode bcrypt) avec le mot de passe 
     if user && user.authenticate(params[:user_password])
       log_in(user)
+
+       # on va cuisiner le cookie pour l'utilisateur
+      remember(user)
+
       redirect_to gossips_path(current_user), notice: "Vous êtes connecté"
+    
     else
+      
+
       redirect_to new_session_path, alert: 'Invalid email/password combination'
     end
   end
 
   def destroy #correspond à la déconnection
-    session.delete(current_user.id)
-    session[:user_id] = nil 
+    log_out(user)
     redirect_to gossips_path
   end
 end
