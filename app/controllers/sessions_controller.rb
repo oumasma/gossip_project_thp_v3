@@ -23,6 +23,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy #correspond à la déconnection
+    session[:user_id] = nil 
     log_out(user)
     redirect_to gossips_path
   end
