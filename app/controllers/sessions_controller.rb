@@ -17,8 +17,8 @@ class SessionsController < ApplicationController
       redirect_to gossips_path(current_user), notice: "Vous êtes connecté"
     
     else
-      
-      redirect_to new_session_path, alert: 'Invalid email/password combination'
+     flash.now.alert = "Invalid email or password"
+    render "new"
     end
   end
 
