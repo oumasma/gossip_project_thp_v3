@@ -11,7 +11,7 @@
   <main role="main">
 
   <!-- Main jumbotron for a primary marketing message or call to action -->
-  <div class="jumbotron" style="background-image: url(<%= 'https://news.ucr.edu/sites/g/files/rcwecm1816/files/styles/news_article_featured_l/public/2019-05/gossip%20pic.jpg' %>)"
+  <div class="jumbotron" 
     <div class="container">
       <h1 class="display-3">Welcome To The Best & Famous Gossip Project!</h1>
       <p>Bienvenue sur votre DASHBOARD. A vous la gloire!</p>
@@ -21,24 +21,28 @@
 
   <center>
 
-  <div>
+  <div class="all_gossips_title">
       <h1 style="font-size:40px;" >Tous les potins </h1></br></br>
   </div>
   
 
-  
- <div class="list-group">
-  <% @list_gossips.each do |gossip| %>
+ <div class="container" id="gossips_container"> 
+  <div class="list-group">
+   <% @list_gossips.each do |gossip| %>
     <%= link_to gossip_path(gossip.id), class: "list-group-item-action" do %>
+      <div class="gossip_content">  
         <div class="text-center">
             <h5 class="mb-2">Potin n°<%= gossip.id %> : <%= gossip.title %></h5></br>            
         </div> 
             <p class="mb-2"><%= gossip.content %></p>
             <small><%= gossip.user.first_name %></small></br></br>
+      </div>
       <% end %>
-  <% end %>
+   <% end %>
+  </div>
 </div>
-
+ 
+</center> 
   </body>
-</center>  
+ 
 </html>

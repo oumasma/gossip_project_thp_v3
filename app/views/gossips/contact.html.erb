@@ -1,28 +1,50 @@
-<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <title>The Gossip Project - Contact</title>
-    </head>
-
-    <body>
-       <center>  
-       
-
-        <p>
-        <%= link_to("https://www.instagram.com/itsmeleighton/?hl=fr") do %>
-              <div class="card-body">
-              <button type="button" class="btn btn-success btn-lg btn-block"> 
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
-                  <path fill-rule="evenodd" d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
-        </svg> Contactez nous</button>
-      </div>
-      <%end%>
-        </p> 
- 
-    <img src="https://image.freepik.com/vecteurs-libre/lettre-amour-design-plat_23-2147785126.jpg">
-        </center>
+<div class="container">
+  <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="well well-sm">
+          <form class="form-horizontal" action="" method="post">
+          <fieldset>
+            <legend class="text-center">Contactez-nous</legend>
     
-    </body>
-</html> 
+            <!-- Name input-->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="name">Prénom</label>
+              <div class="col-md-9">
+                <input id="name" name="name" type="text" placeholder="Jean" class="form-control">
+              </div>
+            </div>
+    
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="name">Nom</label>
+              <div class="col-md-9">
+                <input id="name" name="name" type="text" placeholder="Dupont" class="form-control">
+              </div>
+            </div>
+            <!-- Email input-->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="email">E-mail</label>
+              <div class="col-md-9">
+                <input id="email" name="email" type="text" placeholder="jean@dupont.com" class="form-control">
+              </div>
+            </div>
+    
+            <!-- Message body -->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="message">Votre message</label>
+              <div class="col-md-9">
+                <textarea class="form-control" id="message" name="Ecrivez ce que vous voulez ici" placeholder="Please enter your message here..." rows="5"></textarea>
+              </div>
+            </div>
+    
+            <!-- Form actions -->
+            <div class="form-group">
+              <div class="col-md-12 text-right">
+                <button type="submit" class="btn btn-primary btn-lg">Envoyer</button>
+              </div>
+            </div>
+          </fieldset>
+          </form>
+        </div>
+      </div>
+  </div>
+</div>
