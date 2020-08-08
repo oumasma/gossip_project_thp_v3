@@ -34,6 +34,9 @@
           <%= label_tag 'Saisis ton mot de passe : ' %>
           <%= password_field_tag :user_password,  nil, class: "form-control" %>
         <br/>
+          <%= label_tag "Se souvenir de moi" %>
+          <%= check_box_tag :remember_me, 1, params[:remember_me] %>
+   
         <br/>
           
           <%= submit_tag("Se connecter", :class =>"btn btn-success") %>
