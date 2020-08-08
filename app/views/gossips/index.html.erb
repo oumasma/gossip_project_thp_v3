@@ -20,21 +20,24 @@
   </div>
 
   <center>
-  <h1 style="font-size:40px;" >Tous les potins </h1>
-  </br>
 
+  <div>
+      <h1 style="font-size:40px;" >Tous les potins </h1></br></br>
+  </div>
   
 
   
+ <div class="list-group">
   <% @list_gossips.each do |gossip| %>
-    <div class="card mb-4 box-shadow" style="width: 18rem;">
-    <h5 class="card-title text-center">Potin n°<%= gossip.id %> </h5>
-    <p class="card-text text-center">
-        <%= link_to("/gossips/#{gossip.id}") do %>
-            <%= gossip.user.pseudo %> : </br> <%= gossip.content %> </p>
-        <% end %>	
-        </div></br>
+    <%= link_to gossip_path(gossip.id), class: "list-group-item-action" do %>
+        <div class="text-center">
+            <h5 class="mb-2">Potin n°<%= gossip.id %> : <%= gossip.title %></h5></br>            
+        </div> 
+            <p class="mb-2"><%= gossip.content %></p>
+            <small><%= gossip.user.first_name %></small></br></br>
+      <% end %>
   <% end %>
+</div>
 
   </body>
 </center>  
